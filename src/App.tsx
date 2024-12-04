@@ -14,6 +14,19 @@ function App() {
         setCustomer((prevCustomers) => [...prevCustomers, newCustomer]);
     }
 
+    function deleteCustomer() {
+        setCustomer((prevCustomers) => prevCustomers.slice(0, -1));
+    }
+
+    function deleteByEmailCustomer(){
+        console.log(email);
+
+        const filteredcustomers: Customer[] = customer.filter((cus) => cus.email != email);
+
+        setCustomer(filteredcustomers)
+    }
+
+
     return (
         <div>
             <input
@@ -41,6 +54,8 @@ function App() {
             <br />
 
             <button onClick={addCustomer}>Add Customer</button>
+            <button onClick={deleteCustomer}>Delete Customer</button>
+            <button onClick={deleteByEmailCustomer}>Delete by Email Customer</button>
 
 
             {customer.map((cust) => (
