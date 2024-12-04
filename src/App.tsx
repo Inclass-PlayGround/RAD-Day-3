@@ -26,6 +26,27 @@ function App() {
         setCustomer(filteredcustomers)
     }
 
+    function updateCustomer(){
+        // let index = -1;
+        // for(let cus of customer){
+        //     if(cus.email == email){
+        //         customer[index] = new Customer(name, email, phone);
+        //     }
+        //     index+=1;
+        // }
+        const set = customer.map((cus) => {
+            if(cus.email !=email){
+                return cus
+            }else{
+                return new Customer(name, email, phone);
+            }
+        });
+
+        setCustomer(set)
+
+
+    }
+
 
     return (
         <div>
@@ -56,6 +77,7 @@ function App() {
             <button onClick={addCustomer}>Add Customer</button>
             <button onClick={deleteCustomer}>Delete Customer</button>
             <button onClick={deleteByEmailCustomer}>Delete by Email Customer</button>
+            <button onClick={updateCustomer}>Update</button>
 
 
             {customer.map((cust) => (
