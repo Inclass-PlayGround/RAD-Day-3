@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.inputs:hover{
+  border: 2px solid royalblue;
+}
+
+.inputs:focus{
+  border: 2px solid red;
+}
